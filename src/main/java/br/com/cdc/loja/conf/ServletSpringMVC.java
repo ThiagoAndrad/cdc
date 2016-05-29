@@ -2,11 +2,12 @@ package br.com.cdc.loja.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{AppWebConfiguration.class};
+		return new Class[]{JPAConfiguration.class, AppWebConfiguration.class};
 	}
 
 	@Override
