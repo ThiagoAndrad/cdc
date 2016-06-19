@@ -41,5 +41,11 @@ public class Product {
 	public void setPages(int pages) {
 		this.pages = pages;
 	}
+	public List<Price> getPrices() {
+		return prices;
+	}
+	public void setPrices(List<Price> prices) {
+		this.prices = prices;
+	}
 
 }
