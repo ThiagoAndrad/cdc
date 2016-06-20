@@ -14,25 +14,26 @@ import br.com.cdc.loja.models.enuns.BookType;
 
 @Controller
 @Transactional
+@RequestMapping("/produtos")
 public class ProductsController {
 	
 	@Autowired
 	private ProductDAO productDAO;
 	
-	@RequestMapping("/produtos/form")
+	@RequestMapping("/form")
 	public ModelAndView form() {
 		ModelAndView modelAndView = new ModelAndView("products/form");
 		modelAndView.addObject("types", BookType.values());
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/produtos", method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST)
 	public String save(Product product) {
 		productDAO.save(product);
 		return "products/ok";
 	}
 
-	@RequestMapping(value="/produtos", method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView modelAndView = new ModelAndView("products/list");
 		modelAndView.addObject("products", productDAO.list());
