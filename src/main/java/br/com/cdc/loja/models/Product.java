@@ -17,9 +17,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Product {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@NotBlank
 	private String title;
@@ -32,34 +32,43 @@ public class Product {
 	private List<Price> prices = new ArrayList<Price>();
 	@DateTimeFormat
 	private Calendar releaseDate;
-	
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public int getPages() {
 		return pages;
 	}
+
 	public void setPages(int pages) {
 		this.pages = pages;
 	}
+
 	public List<Price> getPrices() {
 		return prices;
 	}
+
 	public void setPrices(List<Price> prices) {
 		this.prices = prices;
 	}
+
 	public Calendar getReleaseDate() {
 		return releaseDate;
 	}
+
 	public void setReleaseDate(Calendar releaseDate) {
 		this.releaseDate = releaseDate;
 	}
