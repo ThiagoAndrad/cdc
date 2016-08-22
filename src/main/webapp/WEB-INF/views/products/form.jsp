@@ -35,6 +35,11 @@
 			</div>
 		</c:forEach>
 		<div>
+		<div>
+			<label for="releaseDate">Data de lançamento</label>
+			<input type="date" name="releaseDate" id="releaseDate"/>
+			<form:errors path="releaseDate"/>
+		</div>
 			<input type="submit" value="Enviar"/>
 		</div>
 	</form:form>
