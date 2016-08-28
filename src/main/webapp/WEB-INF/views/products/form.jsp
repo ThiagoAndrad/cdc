@@ -11,7 +11,7 @@
 <title>Cadastro de Produtos</title>
 </head>
 <body>
-	 <form:form action="/cdc/produtos" method="post" commandName="product">
+	 <form:form action="/cdc/produtos" method="post" commandName="product" enctype="multipart/form-data">
 		<div>
 			<label for="title">Titulo</label>
 			<form:input path="title" id="title"/>
@@ -39,6 +39,11 @@
 			<label for="releaseDate">Data de lançamento</label>
 			<input type="date" name="releaseDate" id="releaseDate"/>
 			<form:errors path="releaseDate"/>
+		</div>
+		<div>
+			<label for="summary">Sumário do Livro</label>
+			<input type="file" name="summary"/>
+			<form:errors path="summaryPath"/>
 		</div>
 			<input type="submit" value="Enviar"/>
 		</div>
