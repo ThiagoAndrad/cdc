@@ -11,7 +11,7 @@
 <title>Cadastro de Produtos</title>
 </head>
 <body>
-	 <form:form action="${spring:mvcUrl('PC#save').build()}" method="post" commandName="product">
+	 <form:form action="/cdc/produtos" method="post" commandName="product">
 		<div>
 			<label for="title">Titulo</label>
 			<form:input path="title" id="title"/>
