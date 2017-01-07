@@ -9,3 +9,9 @@ hs_err_pid*
 pom.properties
 .DS_Store
 /target/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
