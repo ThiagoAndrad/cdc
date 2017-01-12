@@ -53,4 +53,15 @@ public class ProductsController {
 		modelAndView.addObject("products", productDAO.list());
 		return modelAndView;
 	}
+
+	@GetMapping(value = "/show")
+	public ModelAndView showModelAndView(Integer id) {
+		ModelAndView modelAndView = new ModelAndView("products/show");
+		Product product = productDAO.find(id);
+		modelAndView.addObject("product", product);
+		return modelAndView;
+	}
+
+
+
 }

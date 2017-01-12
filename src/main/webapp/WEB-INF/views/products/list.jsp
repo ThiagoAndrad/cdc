@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -10,14 +11,16 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Título</th>
+				<th>TÃ­tulo</th>
 				<th>Valores</th>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${products}" var="product">
 			<tr>
-				<td>${product.title}</td>
+				<td>
+					<a href="/produtos/show?id=${product.id}">${product.title}</a>
+				</td>
 				<td>
 					<c:forEach items="${product.prices}" var="price">
 						[${price.value} - ${price.bookType}]					
