@@ -32,7 +32,7 @@ public class Product {
 	@Min(30)
 	private int pages;
 	@ElementCollection
-	private List<Price> prices = new ArrayList<Price>();
+	private List<Price> prices = new ArrayList<>();
 	@DateTimeFormat
 	private Calendar releaseDate;
 
