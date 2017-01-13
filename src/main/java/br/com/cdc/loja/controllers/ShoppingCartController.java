@@ -3,6 +3,7 @@ package br.com.cdc.loja.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -38,6 +39,12 @@ public class ShoppingCartController {
     @GetMapping
     public String items(){
         return "shoppingCart/items";
+    }
+
+    @PostMapping("/{productId}")
+    public String remove(@PathVariable("productId") Integer productId, BookType bookType){
+        shoppingCart.remove(createItem(productId, bookType));
+        return "redirect:/shopping";
     }
 
 }

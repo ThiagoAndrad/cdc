@@ -19,11 +19,11 @@
 		<c:forEach items="${products}" var="product">
 			<tr>
 				<td>
-					<a href="/produtos/show?id=${product.id}">${product.title}</a>
+					<a href="/produtos/${product.id}">${product.title}</a>
 				</td>
 				<td>
 					<c:forEach items="${product.prices}" var="price">
-						[${price.value} - ${price.bookType}]					
+						[${price.value} - ${price.bookType}]
 					</c:forEach>
 				</td>
 			</tr>
