@@ -18,9 +18,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import br.com.cdc.loja.controllers.HomeController;
 import br.com.cdc.loja.daos.ProductDAO;
 import br.com.cdc.loja.infra.FileSaver;
+import br.com.cdc.loja.models.ShoppingCart;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, ProductDAO.class, FileSaver.class})
+@ComponentScan(basePackageClasses={HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Override

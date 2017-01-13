@@ -1,5 +1,6 @@
 package br.com.cdc.loja.models;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -14,6 +15,8 @@ import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import br.com.cdc.loja.models.enuns.BookType;
 
 @Entity
 public class Product {
@@ -85,6 +88,13 @@ public class Product {
 	
 	public void setSummaryPath(String summaryPath) {
 		this.summaryPath = summaryPath;
+	}
+
+	public BigDecimal priceFor(BookType bookType) {
+		return prices
+				.stream()
+				.filter(price -> price.getBookType().equals(bookType))
+				.findFirst().get().getValue();
 	}
 
 }
